@@ -2,6 +2,7 @@ package in.sriraman.sharedpreferences;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import androidx.preference.PreferenceManager;
 
 import java.util.Map;
 
@@ -12,7 +13,7 @@ public class SharedHandler {
     private static SharedHandler sSharedHandler;
 
     public SharedHandler(Context context, String name) {
-        mSharedPreferences = context.getSharedPreferences(name, Context.MODE_PRIVATE);
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
     }
 
     public static SharedHandler getInstance() {
